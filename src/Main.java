@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -58,12 +58,13 @@ public class Main {
     }
 
     public static void task4(char[] reversFullName) {
-        int a = 0;
+        char a = 0;
         for (int i = 0; i < reversFullName.length/2; i++) {
             a=reversFullName[i];
-
+            reversFullName[i]=reversFullName[reversFullName.length-1-i];
+            reversFullName[reversFullName.length-1-i]=a;
 
         }
-        System.out.println(a);
+        System.out.println(Arrays.toString(reversFullName));
     }
 }
