@@ -1,10 +1,10 @@
-
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
 
         int[] array = new int[30];
-        char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         rand(array);
         task1(array);
         task2(array);
@@ -12,10 +12,11 @@ public class Main {
         task4(reverseFullName);
 
     }
-    public static void rand(int[]array){
+
+    public static void rand(int[] array) {
         java.util.Random random = new java.util.Random();
-        for (int i = 0;i< array.length;i++){
-            array[i]=random.nextInt(100000)+100000;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(100000) + 100000;
         }
 
     }
@@ -31,39 +32,35 @@ public class Main {
 
     public static void task2(int[] array) {
         int max = 0;
-        for (int i = 0;i<array.length;i++){
-            if(max<array[i]){
-                max=array[i];
+        for (int i = 0; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
             }
         }
         int min = max;
-        for (int i = 0;i<array.length;i++) {
+        for (int i = 0; i < array.length; i++) {
             if (min > array[i]) {
                 min = array[i];
             }
         }
-        System.out.println("Минимальная сумма трат за день составила "+min +" рублей. Максимальная сумма трат за день составила "+max+ " рублей");
+        System.out.println("Минимальная сумма трат за день составила " + min + " рублей. Максимальная сумма трат за день составила " + max + " рублей");
     }
 
-    public static void task3(int[]array) {
-        int sum =0;
-        int day=0;
+    public static void task3(int[] array) {
+        double sum = 0.0;
 
-        for (int i = 0;i< array.length;i++){
-            sum+=array[i];
-            day++;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
         }
-        double midlSum = sum/day;
-        System.out.println("Средняя сумма трат за месяц составила "+midlSum+" rur");
+        double midlSum = sum / array.length;
+        System.out.println("Средняя сумма трат за месяц составила " + midlSum + " rur");
     }
 
     public static void task4(char[] reversFullName) {
-        int a = 0;
-        for (int i = 0; i < reversFullName.length/2; i++) {
-            a=reversFullName[i];
-
-
+        char a = 0;
+        for (int i = reversFullName.length-1; i >=0; i--) {
+            System.out.print(reversFullName[i]);
         }
-        System.out.println(a);
+
     }
 }
